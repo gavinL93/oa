@@ -7,6 +7,7 @@ import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import org.oa.common.domain.BaseEntity;
 
@@ -16,10 +17,14 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = false)
-@Table(name = "OA_DEPT")
-public class Dept extends BaseEntity {
+@Table(name = "OA_JOB", uniqueConstraints = @UniqueConstraint(columnNames = { "CODE" }, name = "UQ_JOB_CODE"))
+public class Job extends BaseEntity {
 
-	private static final long serialVersionUID = 650869023393097574L;
+	private static final long serialVersionUID = 6217008478303289267L;
+
+	// CODE 代码
+	@Column(name = "CODE", length = 100)
+	private String code;
 
 	// REMARK VARCHAR(500) 备注
 	@Column(name = "REMARK", length = 500)
@@ -27,12 +32,12 @@ public class Dept extends BaseEntity {
 
 	// MODIFIER VARCHAR(50) 修改人
 	@ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class)
-	@JoinColumn(name = "MODIFIER", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_DEPT_MODIFIER"))
+	@JoinColumn(name = "MODIFIER", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_JOB_MODIFIER"))
 	private User modifier;
 
 	// CREATER VARCHAR(50) 修改人
 	@ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class)
-	@JoinColumn(name = "CREATER", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_DEPT_CREATER"))
+	@JoinColumn(name = "CREATER", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_JOB_CREATER"))
 	private User creater;
 
 }
