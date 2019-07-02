@@ -65,10 +65,17 @@
 		<!-- 添加 JSTL 依赖 -->
 		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
 		<dependency>
-		    <groupId>javax.servlet.jsp.jstl</groupId>
+		    <groupId>javax.servlet</groupId>
 		    <artifactId>jstl</artifactId>
-		    <version>1.2</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/taglibs/standard -->
+<!-- 		<dependency> -->
+<!-- 		    <groupId>taglibs</groupId> -->
+<!-- 		    <artifactId>standard</artifactId> -->
+<!-- 		    <version>1.1.2</version> -->
+<!--         </dependency> -->
+		
 		
 		<!-- 添加使用jsp必须的 tomcat-embed-jasper 依赖 -->
 		<!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper -->
@@ -90,6 +97,48 @@
             <artifactId>lombok</artifactId>
         </dependency>
 		
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.54</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        
+        <!-- swagger插件 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.8.0</version>
+        </dependency>
+        <!-- /swagger-ui.html 原生 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.8.0</version>
+        </dependency>
+        <!-- /docs.html 美化版 -->
+        <dependency>
+            <groupId>com.github.caspar-chen</groupId>
+            <artifactId>swagger-ui-layer</artifactId>
+            <version>1.1.3</version>
+        </dependency>
+        <!-- /doc.html 增强版 -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>1.9.3</version>
+        </dependency>
 		
 	</dependencies>
 
